@@ -8,7 +8,7 @@ from src.data_ingestion import download_etf_data_to_sqlite
 
 # Define parameters
 tickers = ["SPY", "IVV", "VTI"]
-db_path = "data/etf_data.db"
+db_path = "data/raw/etf_data.db"
 start_date = "2010-01-01"
 end_date = "2025-03-26"
 
