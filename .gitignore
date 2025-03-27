@@ -1,0 +1,20 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.db
+
+# Data and models
+data/
+models/
+
+# Conda, Pip and Python environment files
+etfenv/
+.conda/
+requirements.txt
+
+# VSCode project settings
+.vscode/
+
+# MLflow artifacts and logs
+mlruns/
