@@ -9,7 +9,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.data_pipeline.load_data import load_raw_data
 from src.data_pipeline.clean_data import clean_data
 from src.features.feature_engineering import add_features
-from src.data_pipeline.utils import save_features_to_sqlite
+from src.features.save import save_features_to_sqlite
 
 target_symbol = "SPY"
 

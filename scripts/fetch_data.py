@@ -4,7 +4,7 @@ from pathlib import Path
 # Add project root to sys.path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from src.data_ingestion import download_etf_data_to_sqlite
+from src.data_ingestion.data_ingestion import download_etf_data_to_sqlite
 
 # Define parameters
 tickers = ["SPY", "IVV", "VTI"]
