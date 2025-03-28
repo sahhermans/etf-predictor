@@ -10,9 +10,9 @@ project-root/
 │   ├── data_pipeline/           # Load and clean raw data
 │   │   ├── load_data.py
 │   │   └── clean_data.py
-│   ├── features/                # Feature engineering + export
-│   │   ├── feature_engineering.py
-│   │   └── save.py              # save_features_to_sqlite()
+│   └── features/                # Feature engineering + export
+│       ├── feature_engineering.py
+│       └── save.py              # save_features_to_sqlite()
 │
 ├── scripts/                     # Entry points / orchestration scripts
 │   ├── fetch_data.py            # Runs data download
