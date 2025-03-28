@@ -6,23 +6,20 @@ from pathlib import Path
 # Add project root to sys.path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from src.data.load_data import load_raw_data
-from src.data.clean_data import clean_data
-from src.data.feature_engineering import add_features
-from src.data.utils import save_to_sqlite
+from src.data_pipeline.load_data import load_raw_data
+from src.data_pipeline.clean_data import clean_data
+from src.features.feature_engineering import add_features
+from src.data_pipeline.utils import save_features_to_sqlite
 
-def main():
-    df_raw = df = load_raw_data(
-        db_path="data/raw/etf_data.db",
-        tickers=["SPY", "VTI"],
-        start_date="2021-01-01",
-        end_date="2023-12-31"
-        )
-    df_clean = clean_data(df_raw)
-    df_features = add_features(df_clean)
-    save_to_sqlite(df_features)
-    print("✅ Data pipeline completed and saved to database.")
+target_symbol = "SPY"
 
-if __name__ == "__main__":
-    main()
-
+df_raw = df = load_raw_data(
+    #db_path="data/raw/etf_data.db",
+    #tickers=["SPY", "VTI"],
+    #start_date="2010-01-01",
+    #end_date="2025-01-01"
+    )
+df_clean = clean_data(df_raw)
+df_features = add_features(df_clean, target_symbol=target_symbol)
+save_features_to_sqlite(df_features, db_path="data/processed/features.db", table_name="features")
+print("Data pipeline completed and saved to database.")
