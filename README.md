@@ -3,6 +3,7 @@
 Predict ETF prices using historical data. This project includes data collection, preprocessing, model training, evaluation, and deployment with MLFlow. Built with `pandas`, `scikit-learn`, `yfinance`, and `mlflow`. 
 
 Current organisation of this repository:
+```bash
 project-root/
 ├── src/
 │   ├── data_ingestion/          # Download ETF data and store in SQLite
@@ -25,3 +26,4 @@ project-root/
 │   └── processed/               # Final SQLite DB with enriched features
 │
 └── environment.yml              # Conda environment specification
+```
